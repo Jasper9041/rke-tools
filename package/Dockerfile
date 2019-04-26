@@ -23,6 +23,7 @@ RUN wget -q -O /tmp/portmap https://github.com/jasper9041/rancher-plugins/releas
 
 ENV ETCD_URL_amd64=https://github.com/coreos/etcd/releases/download/v3.0.17/etcd-v3.0.17-linux-amd64.tar.gz \
     ETCD_URL_arm64=https://github.com/etcd-io/etcd/releases/download/v3.3.10/etcd-v3.3.10-linux-arm64.tar.gz \
+    ETCD_URL_arm=https://github.com/jasper9041/etcd/releases/download/v3.3.10-arm/etcd-v3.3.10-linux-arm.tar.gz \
     ETCD_URL=ETCD_URL_${ARCH}
 RUN wget -q -O - ${!ETCD_URL} | tar xzf - -C /tmp && \
     mv /tmp/etcd-*/etcdctl /usr/local/bin/etcdctl && \
